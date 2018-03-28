@@ -1,0 +1,39 @@
+{
+  "name": "platziverse-db",
+  "version": "1.0.0",
+  "description": "Proyecto Tesis - DB Module",
+  "main": "index.js",
+  "scripts": {
+    "test": "SET DEBUG=platziverse:* && nyc --reporter=lcov  ava tests/ --verbose",
+    "setup": "SET DEBUG=platziverse:* && node setup.js",
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Joel Yustiz",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "nyc": "^11.1.0",
+    "proxyquire": "^2.0.1",
+    "sinon": "^4.4.6",
+    "sqlite3": "^4.0.0",
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "debug": "^3.1.0",
+    "defaults": "^1.0.3",
+    "inquirer": "^5.1.0",
+    "minimist": "^1.2.0",
+    "pg": "^7.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.4.2"
+  }
+}
