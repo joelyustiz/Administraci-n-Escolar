@@ -9,6 +9,7 @@ class App extends Component {
         return (
             <AppLayout>
                 <Nav />
+            {this.props.children}
             </AppLayout>
         )
     }

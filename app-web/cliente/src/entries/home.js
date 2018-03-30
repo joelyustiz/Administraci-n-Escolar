@@ -10,6 +10,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 import {  BrowserRouter as Router } from 'react-router-dom'
 import AppRoutes from '../app/containers/routes'
+// 
 
 const app = document.getElementById('home-container')
 

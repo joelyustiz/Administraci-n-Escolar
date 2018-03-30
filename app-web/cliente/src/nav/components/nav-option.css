@@ -1,0 +1,6 @@
+.NavOption a{
+    list-style: none;
+    /* background: red; */
+    text-decoration: none;
+    color: black;
+}

@@ -4,6 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 //components
 import App from './app'
 import Home from '../../pages/containers/home'
+import Alumnos from '../../pages/containers/alumnos'
+import Personal from '../../pages/containers/personal'
 import Secciones from '../../pages/containers/secciones'
 class Routes extends Component {
     render(){
@@ -12,6 +14,8 @@ class Routes extends Component {
             <Switch>
                 {/* <Route exact path="/about" component={About} /> */}
                 <Route exact path="/secciones" component={Secciones} />
+                <Route exact path="/alumnos" component={Alumnos} />
+                <Route exact path="/personal" component={Personal} />
                 {/* <Route exact path="/library" component={Library} /> */}
                 {/* <Route exact path="/library/:id" component={Library} /> */}
                 <Route exact path="/" component={Home} />
