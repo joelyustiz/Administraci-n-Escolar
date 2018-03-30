@@ -3,13 +3,12 @@ import React, { Component } from 'react'
 import { Route, Switch, Link } from 'react-router-dom';
 //components
 import AppLayout from '../components/app-layout'
-import Content from '../components/content'
+import Nav from '../../nav/containers/nav'
 class App extends Component {
     render(){
         return (
             <AppLayout>
-                <Link to="/secciones">Hola</Link>
-                <Content body={this.props.children} />
+                <Nav />
             </AppLayout>
         )
     }

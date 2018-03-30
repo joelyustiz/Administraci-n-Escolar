@@ -1,8 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-// import Playlist from './src/playlist/components/playlist'
-//import data from '../api.json'
-import AppRoutes from '../routes/index'
+// import Home from '../pages/containers/home'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 // import reducer from '../reducer/index'
@@ -10,32 +8,25 @@ import { Provider } from 'react-redux'
 import { Map as map }   from 'immutable'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
-import { BrowserRouter as Router } from 'react-router-dom';
-
-const logger = ({getState, dispatch}) => next => action => {
-    console.log('Vamos',action)
-            const value = next(action)
-            console.log('Nuevo Estado', getState().toJS())
-            return value
-}
+import {  BrowserRouter as Router } from 'react-router-dom'
+import AppRoutes from '../app/containers/routes'
 
 const app = document.getElementById('home-container')
 
 const store = createStore(
-    (state) => state ,
-    map(),
+    (state)=>(state),
+    {},
     // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     composeWithDevTools(
-            applyMiddleware(logger, thunk)
+            applyMiddleware(thunk)
         )
 )
 
-// console.log(store.getState())
 
 render( 
     <Provider store={store}>
-        <Router>
-            <AppRoutes />
-        </Router>
-    </Provider>,
-     app);
+         <Router>
+             <AppRoutes />
+         </Router>
+    </Provider>
+     , app);

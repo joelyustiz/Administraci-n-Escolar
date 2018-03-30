@@ -1,16 +1,20 @@
 const path = require('path');
-
+const webpack = require('webpack');
 module.exports = {
-  entry: {
-    home: path.resolve(__dirname, 'src/entries/home.js'),
-     },
+  mode: 'development',
+  entry: [
+    
+    'webpack-hot-middleware/client?reload=true&path=/__webpack_hmr&timeout=200',
+    path.resolve(__dirname, 'cliente/src/entries/home.js')
+],
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].js',
+    path: path.resolve(__dirname, 'public'),
+    filename: 'app.js',
+    publicPath: "/",
   },
-  devServer: {
-    port: 9000,
-  },
+  // devServer: {
+  //   port: 9000,
+  // },
   devtool: 'eval-source-map',
   module: {
     rules: [
@@ -42,5 +46,5 @@ module.exports = {
         }
       },
     ]
-  }
+  },
 }

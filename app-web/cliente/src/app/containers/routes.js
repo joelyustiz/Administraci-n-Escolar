@@ -2,9 +2,9 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom';
 //components
-import App from '../app/containers/app'
-import Home from '../pages/containers/home'
-import Secciones from '../pages/containers/secciones'
+import App from './app'
+import Home from '../../pages/containers/home'
+import Secciones from '../../pages/containers/secciones'
 class Routes extends Component {
     render(){
         return(
