@@ -6,13 +6,17 @@ const setupDatabase = require('../lib/db')
 module.exports = function setupSeccionModel (config) {
   const sequelize = setupDatabase(config)
 
-  return sequelize.define('seccion', {
-    type: {
+  return sequelize.define('seccions', {
+    uuid: {
       type: Sequelize.STRING,
       allowNull: false
     },
-    value: {
-      type: Sequelize.TEXT,
+    nombre: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    valor: {
+      type: Sequelize.STRING,
       allowNull: false
     }
   })

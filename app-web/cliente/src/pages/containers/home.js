@@ -4,7 +4,7 @@ class Home extends Component {
     render(){
         return(
             <HomeLayout>
-                Inicios 
+                Inicios adfasd
             </HomeLayout>
         )
     }

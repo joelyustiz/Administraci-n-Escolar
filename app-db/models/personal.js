@@ -3,10 +3,10 @@
 const Sequelize = require('sequelize')
 const setupDatabase = require('../lib/db')
 
-module.exports = function setupAlumnoModel (config) {
+module.exports = function setupPersonalModel (config) {
   const sequelize = setupDatabase(config)
 
-  return sequelize.define('alumnos', {
+  return sequelize.define('personal', {
     uuid: {
       type: Sequelize.STRING,
       allowNull: false
@@ -27,10 +27,6 @@ module.exports = function setupAlumnoModel (config) {
       type: Sequelize.STRING,
       allowNull: false
     },
-    edad: {
-      type: Sequelize.INTEGER,
-      allowNull: false
-    },
     fecha_nacimiento: {
       type: Sequelize.DATE,
       allowNull: false
@@ -39,20 +35,12 @@ module.exports = function setupAlumnoModel (config) {
       type: Sequelize.STRING,
       allowNull: false
     },
-    nombre_representante: {
-      type: Sequelize.STRING,
-      allowNull: false
-    },
-    cedula_representante: {
-      type: Sequelize.STRING,
-      allowNull: false
-    },
     direction: {
       type: Sequelize.TEXT,
       allowNull: false
     },
     telefono: {
-      type: Sequelize.STRING,
+      type: Sequelize.INTEGER,
       allowNull: true
     },
   })

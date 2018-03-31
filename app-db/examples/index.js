@@ -1,50 +1,48 @@
 'use strict'
 
 const db = require('../')
-
+const config = require('../config')
+const uuid = require('uuid')
 async function run () {
-  const config = {
-    database: process.env.DB_NAME || 'platziverse',
-    username: process.env.DB_USER || 'platzi',
-    password: process.env.DB_PASS || 'platzi',
-    host: process.env.DB_HOST || 'localhost',
-    dialect: 'postgres'
-  }
+  const { Alumno, Seccion } = await db(config).catch(handleFatalError)
 
-  const { Agent, Metric } = await db(config).catch(handleFatalError)
-
-  const agent = await Agent.createOrUpdate({
-    uuid: 'yyy',
-    name: 'test',
-    username: 'test',
-    hostname: 'test',
-    pid: 1,
-    connected: true
+  const seccion = await Seccion.createOrUpdate({
+    uuid:'yyz',
+    nombre: 'araure',
+    valor: 'Y'
   }).catch(handleFatalError)
 
-  console.log('--agent--')
-  console.log(agent)
 
-  const agents = await Agent.findAll().catch(handleFatalError)
-  console.log('--agents--')
-  console.log(agents)
+  console.log('--Seccion--')
+  console.log(seccion)
 
-  const metrics = await Metric.findByAgentUuid(agent.uuid).catch(handleFatalError)
-  console.log('--metrics--')
-  console.log(metrics)
 
-  const metric = await Metric.create(agent.uuid, {
-    type: 'memory',
-    value: '300'
+  const alumno = await Alumno.createOrUpdate(seccion.uuid, {
+    uuid:'yyydfsdf',
+    cedula_escolar: '123654',
+    apellidos: 'test',
+    nombres: 'test',
+    sexo: 'h',
+    edad: 4,
+    fecha_nacimiento: new Date('December 17, 1995 03:24:00'),
+    lugar_nacimiento:"Araure",
+    nombre_representante:"testPadre",
+    cedula_representante: "CedulaPadre",
+    direction:"AraurePadre",
+    telefono:"056459875",
   }).catch(handleFatalError)
 
-  console.log('--metric--')
-  console.log(metric)
+  console.log('--Alumno creado--')
+  console.log(alumno)
 
-  const metricsByType = await Metric.findByTypeAgentUuid('memory', agent.uuid).catch(handleFatalError)
-  console.log('--metrics--')
-  console.log(metricsByType)
-}
+  const Alumnoss = await Alumno.findAll().catch(handleFatalError)
+  console.log('--ALumnoss--')
+  console.log(Alumnoss)
+
+  const alumnosPorSeccion = await Alumno.findBySeccion(seccion.id)
+  console.log('--ALumnoss Por Seccion--')
+  console.log(alumnosPorSeccion)
+ }
 
 function handleFatalError (err) {
   console.error(err.message)

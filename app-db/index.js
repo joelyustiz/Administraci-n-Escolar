@@ -1,10 +1,13 @@
 'use strict'
 
 const setupDatabase = require('./lib/db')
-const setupAgentModel = require('./models/agent')
-const setupMetricModel = require('./models/metric')
-const setupAgent = require('./lib/agent')
-const setupMetric = require('./lib/metric')
+const setupAlumnoModel = require('./models/alumno')
+const setupSeccionModel = require('./models/seccion')
+const setupPersonalModel = require('./models/personal')
+
+const setupAlumno = require('./lib/alumno')
+const setupSeccion = require('./lib/seccion')
+const setupPersonal = require('./lib/personal')
 const defaults = require('defaults')
 
 module.exports = async function (config) {
@@ -21,23 +24,23 @@ module.exports = async function (config) {
   })
 
   const sequelize = setupDatabase(config)
-  const AgentModel = setupAgentModel(config)
-  const MetricModel = setupMetricModel(config)
+  const AlumnoModel = setupAlumnoModel(config)
+  const SeccionModel = setupSeccionModel(config)
 
-  AgentModel.hasMany(MetricModel)
-  MetricModel.belongsTo(AgentModel)
+  SeccionModel.hasMany(AlumnoModel)
+  AlumnoModel.belongsTo(SeccionModel)
 
   await sequelize.authenticate()
-
   if (config.setup) {
     await sequelize.sync({ force: true })
   }
+  
 
-  const Agent = setupAgent(AgentModel)
-  const Metric = setupMetric(MetricModel, AgentModel)
+  const Alumno = setupAlumno(SeccionModel, AlumnoModel)
+  const Seccion = setupSeccion(SeccionModel)
 
   return {
-    Agent,
-    Metric
+    Alumno,
+    Seccion
   }
 }

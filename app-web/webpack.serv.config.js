@@ -3,13 +3,13 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'development',
   entry: [
-    'webpack-hot-middleware/client',
+    'webpack-hot-middleware/client?reload=true&path=/__webpack_hmr&timeout=20000',
     path.resolve(__dirname, 'cliente/src/entries/home.js')
 ],
   output: {
     path: path.resolve(__dirname, 'public'),
+    publicPath: '/',
     filename: 'app.js',
-    publicPath: "/",
   },
   // devServer: {
   //   port: 9000,
@@ -46,4 +46,8 @@ module.exports = {
       },
     ]
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
+  ]
 }

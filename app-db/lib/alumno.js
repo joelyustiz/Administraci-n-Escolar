@@ -1,63 +1,58 @@
 'use strict'
 
-module.exports = function setupAgent (AgentModel) {
-  async function createOrUpdate (agent) {
-    const cond = {
-      where: {
-        uuid: agent.uuid
-      }
-    }
-
-    const existingAgent = await AgentModel.findOne(cond)
-
-    if (existingAgent) {
-      const updated = await AgentModel.update(agent, cond)
-      return updated ? AgentModel.findOne(cond) : existingAgent
-    }
-
-    const result = await AgentModel.create(agent)
-    return result.toJSON()
-  }
-
-  function findById (id) {
-    return AgentModel.findById(id)
-  }
-
-  function findByUuid (uuid) {
-    return AgentModel.findOne({
+module.exports = function setupAlumno (SeccionModel, AlumnoModel) {
+  async function createOrUpdate (uuid, alumno) {
+    const seccion = await SeccionModel.findOne( {
       where: {
         uuid
       }
     })
+   const consulta = await AlumnoModel.findOne({where:{uuid:alumno.uuid}})
+    if (seccion && consulta) {
+
+      const updated = await AlumnoModel.update(alumno, {where:{uuid:alumno.uuid}} )
+      return updated ? AlumnoModel.findOne({where:{uuid:alumno.uuid}}) : Alumno
+    }
+    Object.assign(alumno, { seccionId: seccion.id })
+    const result = await AlumnoModel.create(alumno)
+    return result.toJSON()
   }
 
-  function findAll () {
-    return AgentModel.findAll()
+  function findById (id) {
+    return AlumnoModel.findById(id)
   }
 
-  function findConnected () {
-    return AgentModel.findAll({
+  function findByCedulaEscolar (cedula_escolar) {
+    return AlumnoModel.findOne({
       where: {
-        connected: true
+        cedula_escolar
       }
     })
+  }
+
+  function findAll() {
+    return AlumnoModel.findAll()
   }
 
   function findByUsername (username) {
-    return AgentModel.findAll({
+    return AlumnoModel.findAll({
       where: {
-        username,
-        connected: true
+        username
       }
     })
   }
 
+  function findBySeccion(id) {
+    return AlumnoModel.findAll({where:{seccionId:id}})
+  }
+
+  
   return {
     createOrUpdate,
     findById,
-    findByUuid,
+    findByCedulaEscolar,
     findAll,
-    findConnected,
-    findByUsername
+    findByUsername,
+    findBySeccion
   }
 }

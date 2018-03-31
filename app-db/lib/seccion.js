@@ -1,55 +1,24 @@
 'use strict'
-
-module.exports = function setupMetric (MetricModel, AgentModel) {
-  async function findByAgentUuid (uuid) {
-    return MetricModel.findAll({
-      attributes: [ 'type' ],
-      group: [ 'type' ],
-      include: [{
-        attributes: [],
-        model: AgentModel,
-        where: {
-          uuid
-        }
-      }],
-      raw: true
-    })
-  }
-
-  async function findByTypeAgentUuid (type, uuid) {
-    return MetricModel.findAll({
-      attributes: [ 'id', 'type', 'value', 'createdAt' ],
+module.exports = function setupSeccion (SeccionModel) {
+  async function createOrUpdate (seccion) {
+    const cond = {
       where: {
-        type
-      },
-      limit: 20,
-      order: [[ 'createdAt', 'DESC' ]],
-      include: [{
-        attributes: [],
-        model: AgentModel,
-        where: {
-          uuid
-        }
-      }],
-      raw: true
-    })
-  }
-
-  async function create (uuid, metric) {
-    const agent = await AgentModel.findOne({
-      where: { uuid }
-    })
-
-    if (agent) {
-      Object.assign(metric, { agentId: agent.id })
-      const result = await MetricModel.create(metric)
-      return result.toJSON()
+        uuid: seccion.uuid
+      }
     }
+    console.log(seccion.uuid)
+    const existingSeccion = await SeccionModel.findOne(cond)
+    console.log(existingSeccion)
+    if (existingSeccion) {
+      const updated = await SeccionModel.update(seccion, cond)
+      return updated ? SeccionModel.findOne(cond) : existingSeccion
+    }
+
+    const result = await SeccionModel.create(seccion)
+    return result.toJSON()
   }
 
   return {
-    create,
-    findByAgentUuid,
-    findByTypeAgentUuid
+    createOrUpdate
   }
 }

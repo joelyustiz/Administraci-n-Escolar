@@ -1,33 +1,31 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = (env) => {
   const plugins = [
-    new ExtractTextPlugin("css/[name].[hash].css")
+    // new ExtractTextPlugin("css/app.css")
   ]
-
+  
   if (env.NODE_ENV === 'production') {
     plugins.push(
-      new CleanWebpackPlugin(['dist'], {root: __dirname})
+      new CleanWebpackPlugin(['public'], {root: __dirname})
     )
   }
 
   return {
 
     entry: {
-      home: path.resolve(__dirname, 'src/entries/home.js'),
+      home: path.resolve(__dirname, 'cliente/src/entries/home.js'),
     },
     output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'js/[name].[hash].js',
-      publicPath: path.resolve(__dirname, 'dist')+"/",
-      chunkFilename: 'js/[id].[chunkhash].js',
+      path: path.resolve(__dirname, 'public'),
+      filename: 'app.js',
+      publicPath: path.resolve(__dirname, 'public')+"/",
+      chunkFilename: 'app.js',
     },
-    devServer: {
-      port: 9000,
-    },
+    // devServer: {
+    //   port: 9000,
+    // },
     module: {
       rules: [
         {
@@ -44,16 +42,7 @@ module.exports = (env) => {
         },
         {
           test: /\.css$/,
-          use: ExtractTextPlugin.extract({
-            use: [
-              {
-                loader: 'css-loader',
-                options: {
-                  minimize: true,
-                }
-              }
-            ]
-          })
+          use: ['style-loader', 'css-loader']
         },
         {
           test: /\.(jpg|png|gif|svg)$/,

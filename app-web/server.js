@@ -22,7 +22,7 @@ function web() {
   var webpack = require('webpack');
   var webpackConfig = require('./webpack.serv.config');
   var compiler = webpack(webpackConfig);
-  compiler.apply(new webpack.HotModuleReplacementPlugin())
+  // compiler.apply(new webpack.HotModuleReplacementPlugin())
   // compiler.apply(new webpack.optimize.OccurenceOrderPlugin())
   // compiler.apply(new webpack.NoEmitOnErrorsPlugin())
   // Step 2: Attach the dev middleware to the compiler & the server
@@ -31,14 +31,12 @@ function web() {
   }));
 
   // Step 3: Attach the hot middleware to the compiler & the server
-  app.use(require("webpack-hot-middleware")(compiler, {
-    reload:true,    
+  app.use(require("webpack-hot-middleware")(compiler, { 
     log: console.log, path: '/__webpack_hmr', heartbeat: 10 * 1000
   }));
 }
 if(!process.env.NODE_ENV){
   web()
-  console.log('Prueba')
 }
 
 
@@ -74,6 +72,7 @@ function handleFatalError (err) {
 
 process.on('uncaughtException', handleFatalError)
 process.on('unhandledRejection', handleFatalError)
+
 server.listen(port, () => {
   console.log(`${chalk.green('[platziverse-web]')} server listening on port ${port}`)
 
