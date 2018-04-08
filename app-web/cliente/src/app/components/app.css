@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    font-family: Arial;
+    
+}
+
+.App{
+    margin: 0 auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 200px auto;
+}

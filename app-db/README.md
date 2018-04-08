@@ -1,4 +1,4 @@
-# platziverse-db
+# app-db
 
 ## Usage
 
@@ -6,7 +6,7 @@
 const setupDatabase = require('platziverse-db')
 
 setupDabase(config).then(db => {
-  const { Agent, Metric } = db
+  const {ALumno, Seccion} = db
 
 }).catch(err => console.error(err))
 ```

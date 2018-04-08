@@ -1,8 +1,16 @@
 'use strict'
+const debug = require('debug')('platziverse:api:db')
 
 module.exports = {
-  endpoint: process.env.API_ENDPOINT || 'http://localhost:3000',
-  serverHost: process.env.SERVER_HOST || 'http://localhost:8080',
-  mqttHost: process.env.MQTT_HOST || 'mqtt://localhost',
-  apiToken: process.env.API_TOKEN || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBsYXR6aSIsImFkbWluIjp0cnVlLCJwZXJtaXNzaW9ucyI6WyJtZXRyaWNzOnJlYWQiXSwiaWF0IjoxNTAyMzkzNDExfQ.XMKKy9sgqA0TDKjCcgA4_784H2wP7RVQocttSTE-RTU'
+  db: {
+    database: process.env.DB_NAME || 'tesis',
+    username: process.env.DB_USER || 'yoel',
+    password: process.env.DB_PASS || 'yoel',
+    host: process.env.DB_HOST || 'localhost',
+    dialect: 'postgres',
+    logging: s => debug(s),
+},
+  auth: {
+    secret: process.env.SECRET || 'platzi'
+  }
 }

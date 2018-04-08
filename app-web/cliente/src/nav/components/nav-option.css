@@ -1,6 +1,15 @@
+.NavOption{
+    
+}
 .NavOption a{
     list-style: none;
     /* background: red; */
     text-decoration: none;
     color: black;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    color: white;  
+    border-bottom: #f0f0f0 1px solid;
+    padding: 2px 0;
 }

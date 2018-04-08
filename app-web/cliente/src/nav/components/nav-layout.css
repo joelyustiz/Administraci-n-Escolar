@@ -1,0 +1,14 @@
+.NavLayout{
+    background: #171c30;  
+}
+.NavLayout  button{
+        height: inherit;
+        border: none;
+        background: transparent;
+        outline: 0;
+        width: inherit;
+        box-sizing: none;
+        font-size: 30px;
+        cursor: pointer;
+        padding: 0;
+}

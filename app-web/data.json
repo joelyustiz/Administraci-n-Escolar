@@ -1,0 +1,84 @@
+{
+    "alumno": [
+        {
+            "apellidos": "test3",
+            "cedula_escolar": "123654",
+            "cedula_representante": "CedulaPadre",
+            "createdAt": "2018-03-31T01:42:36.129Z",
+            "direction": "AraurePadre",
+            "edad": 4,
+            "fecha_nacimiento": "1995-12-17T07:24:00.000Z",
+            "id": 1,
+            "lugar_nacimiento": "Araure",
+            "nombre_representante": "testPadre",
+            "nombres": "test3",
+            "seccionId": 3,
+            "sexo": "h",
+            "telefono": "056459875",
+            "updatedAt": "2018-03-31T01:44:08.785Z",
+            "uuid": "yxx"
+        },
+        {
+            "apellidos": "test",
+            "cedula_escolar": "123654",
+            "cedula_representante": "CedulaPadre",
+            "createdAt": "2018-03-31T01:44:30.121Z",
+            "direction": "AraurePadre",
+            "edad": 4,
+            "fecha_nacimiento": "1995-12-17T07:24:00.000Z",
+            "id": 2,
+            "lugar_nacimiento": "Araure",
+            "nombre_representante": "testPadre",
+            "nombres": "test",
+            "seccionId": 3,
+            "sexo": "h",
+            "telefono": "056459875",
+            "updatedAt": "2018-03-31T01:44:30.121Z",
+            "uuid": "yyyyy"
+        },
+        {
+            "apellidos": "test",
+            "cedula_escolar": "123654",
+            "cedula_representante": "CedulaPadre",
+            "createdAt": "2018-03-31T01:47:44.191Z",
+            "direction": "AraurePadre",
+            "edad": 4,
+            "fecha_nacimiento": "1995-12-17T07:24:00.000Z",
+            "id": 3,
+            "lugar_nacimiento": "Araure",
+            "nombre_representante": "testPadre",
+            "nombres": "test",
+            "seccionId": 2,
+            "sexo": "h",
+            "telefono": "056459875",
+            "updatedAt": "2018-04-01T14:40:35.777Z",
+            "uuid": "yyydfsdf"
+        }
+    ],
+    "seccion": [
+        {
+            "createdAt": "2018-03-30T23:59:41.348Z",
+            "id": 1,
+            "nombre": "araure",
+            "updatedAt": "2018-03-31T01:39:36.615Z",
+            "uuid": "yyy",
+            "valor": "A"
+        },
+        {
+            "createdAt": "2018-03-31T00:00:51.810Z",
+            "id": 2,
+            "nombre": "araure",
+            "updatedAt": "2018-03-31T01:52:07.789Z",
+            "uuid": "yr",
+            "valor": "B"
+        },
+        {
+            "createdAt": "2018-03-31T01:42:20.090Z",
+            "id": 3,
+            "nombre": "araure",
+            "updatedAt": "2018-04-01T14:40:35.694Z",
+            "uuid": "yyz",
+            "valor": "Y"
+        }
+    ]
+}

@@ -8,7 +8,6 @@ const asyncify = require('express-asyncify')
 const socketio = require('socket.io')
 const chalk = require('chalk')
 
-const proxy = require('./proxy')
 const { pipe } = require('./utils')
 const { mqttHost } = require('./config')
 
@@ -22,27 +21,50 @@ function web() {
   var webpack = require('webpack');
   var webpackConfig = require('./webpack.serv.config');
   var compiler = webpack(webpackConfig);
-  // compiler.apply(new webpack.HotModuleReplacementPlugin())
-  // compiler.apply(new webpack.optimize.OccurenceOrderPlugin())
-  // compiler.apply(new webpack.NoEmitOnErrorsPlugin())
-  // Step 2: Attach the dev middleware to the compiler & the server
   app.use(require("webpack-dev-middleware")(compiler, {
     logLevel: 'warn', publicPath: webpackConfig.output.publicPath
   }));
 
   // Step 3: Attach the hot middleware to the compiler & the server
   app.use(require("webpack-hot-middleware")(compiler, { 
-    log: console.log, path: '/__webpack_hmr', heartbeat: 10 * 1000
+    log: console.log, path: '/__webpack_hmr', heartbeat: 10 * 1000, reload:true
   }));
 }
+// console.log(process.env.NODE_ENV)
 if(!process.env.NODE_ENV){
   web()
 }
+const db = require('../app-db')
+const config = require('./config')
 
+const api = asyncify(express.Router())
 
+let services 
+let estado = {}
+
+app.get('/estado-inicial', async (req, res, next) => {
+    
+    console.log(`SERVICIOSSSS ${services}`)
+    if (!services) {
+      debug('Connecting to database')
+      try {
+        services = await db(config.db)
+        estado.alumno = await services.Alumno.findAll()
+        estado.seccion = await services.Seccion.findAll()
+      } catch (e) {
+        return next(e)
+      }
+    }
+    estado.alumno = await services.Alumno.findAll()
+    estado.seccion = await services.Seccion.findAll()
+    res.json(estado)
+  })
+//api
+app.use('/api/alumno', require('./api/alumno'))
+app.use('/api/seccion', require('./api/seccion'))
 app.use(express.static(path.join(__dirname, 'public')))
-app.use('/', proxy)
 
+//peticiones Get
 app.get("*", function(req, res) {
   res.sendFile(__dirname + '/index.html');
 });

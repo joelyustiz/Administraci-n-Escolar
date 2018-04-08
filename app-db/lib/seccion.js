@@ -18,7 +18,12 @@ module.exports = function setupSeccion (SeccionModel) {
     return result.toJSON()
   }
 
+  async function findAll() {
+    return SeccionModel.findAll()
+  }
+
   return {
-    createOrUpdate
+    createOrUpdate,
+    findAll
   }
 }
