@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import Search from './search'
+import BotoneraLayout from '../components/botonera-layout'
 export default class Botonera extends Component {
   constructor(props) {
     super(props);
@@ -25,8 +26,8 @@ export default class Botonera extends Component {
   }
   render() {
     return (
-      <div className="Botonera">
-        <Nav tabs>
+      <BotoneraLayout>
+           <Nav tabs>
           <NavItem>
             <NavLink
               className={classnames({ active: this.state.activeTab === '1' })}
@@ -50,8 +51,8 @@ export default class Botonera extends Component {
           <TabPane tabId="1">
             <Row>
               <Col sm="8">
-                <button className="" onClick={this.handleClic} >Agregar Alumno</button>
-                <button className="" onClick={this.handleClic} >Modificar Seccion</button>
+                <button className="button blue" onClick={this.handleClic} >Agregar Alumno</button>
+                <button className="button blue" onClick={this.handleClic} >Modificar Seccion</button>
               </Col>
               <Col sm="4">
                 <Search/>
@@ -78,7 +79,8 @@ export default class Botonera extends Component {
             </Row>
           </TabPane>
         </TabContent>
-      </div>
+      </BotoneraLayout>
+       
     );
   }
 }

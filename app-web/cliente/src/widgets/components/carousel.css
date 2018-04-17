@@ -1,0 +1,13 @@
+.CarouselT{
+    margin-bottom: 10px;
+}
+.CarouselT img{
+    width: 100%;
+    background-size: cover;
+}
+.CardArticle{
+    margin: 0 10px 5px 10px;
+}
+ .Card{
+    margin-bottom: 10px;
+}

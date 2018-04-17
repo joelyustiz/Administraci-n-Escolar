@@ -62,7 +62,9 @@ app.get('/estado-inicial', async (req, res, next) => {
 //api
 app.use('/api/alumno', require('./api/alumno'))
 app.use('/api/seccion', require('./api/seccion'))
+
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'data')))
 
 //peticiones Get
 app.get("*", function(req, res) {

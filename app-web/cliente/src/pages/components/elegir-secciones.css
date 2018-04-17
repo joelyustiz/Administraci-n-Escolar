@@ -1,0 +1,69 @@
+.ElegirSecciones .Button{
+    display: block;
+    width: 700px;
+    height: 70px;
+    cursor: pointer;
+    margin: 10px auto;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    font:  "Advent Pro", Helvetica, sans-serif; 
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    letter-spacing: 1px;
+    background: rgba(0,0,0,0);
+    -webkit-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    -moz-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    -o-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+}
+
+.ElegirSecciones .Green {
+    border: 2px solid rgb(30,205,151);
+    color: rgb(30, 205, 151);
+}
+.ElegirSecciones .Green:hover{
+    color: rgba(255,255,255,1);
+    background: rgb(30, 205, 151);
+}
+
+.ElegirSecciones .Blue {
+    border: 2px solid rgb(30, 56, 205);
+    color: rgb(30, 56, 205);
+}
+.ElegirSecciones .Blue:hover{
+    color: rgba(255,255,255,1);
+    background: rgb(30, 56, 205);
+}
+
+.ElegirSecciones .Violet {
+    border: 2px solid rgb(205, 30, 147);
+    color: rgb(205, 30, 147);
+}
+.ElegirSecciones .Violet:hover{
+    color: rgba(255,255,255,1);
+    background: rgb(205, 30, 147);
+}
+.ElegirSecciones .Orange {
+    border: 2px solid rgb(205, 150, 30);
+    color: rgb(205, 150, 30);
+}
+.ElegirSecciones .Orange:hover{
+    color: rgba(255,255,255,1);
+    background: rgb(205, 150, 30);
+}
+.ElegirSecciones .Red{
+    border: 2px solid rgb(214, 25, 25);
+    color: rgb(214, 25, 25);
+}
+.ElegirSecciones .Red:hover{
+    color: rgba(255,255,255,1);
+    background: rgb(214, 25, 25);
+}
+.Button:active {
+    border: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+  }

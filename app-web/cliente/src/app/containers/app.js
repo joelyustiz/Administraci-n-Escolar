@@ -13,7 +13,7 @@ class App extends Component {
         //Solo se lanza una vez
         //Ideal para llamar a una API, hacer un setInteval, etc
         fetch('/estado-inicial').then(res => res.json()).then((res)=>{
-            this.props.actions.addTodo(res)
+            this.props.actions.addTodo(res)      
         })
     }
     render(){
