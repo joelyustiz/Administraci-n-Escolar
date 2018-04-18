@@ -1,5 +1,6 @@
 .NavLayout{
-    background: #171c30;  
+    background: #171c30; 
+     
 }
 .NavLayout  button{
         height: inherit;
@@ -8,7 +9,21 @@
         outline: 0;
         width: inherit;
         box-sizing: none;
-        font-size: 30px;
+        font-size: 25px;
         cursor: pointer;
         padding: 0;
+}
+.Menu{
+    display: flex;
+}
+.ButtonMenu{
+    margin-left: 5px;
+}
+
+.TitleMenu{
+    margin: 3px auto 0 auto;
+}
+.TitleMenu h6{
+    color: #f2f2f2f2;
+    font-size: 19px;
 }

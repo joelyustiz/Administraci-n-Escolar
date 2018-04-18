@@ -2,17 +2,18 @@
 import React from 'react'
 import { Button } from 'reactstrap';
 import './elegir-secciones.css';
+import Card from '../../widgets/components/card'
 export default function ElegirSecciones(props) {
     return (
         <div className="ElegirSecciones">
-            <button 
-                className="Button Green"
-                onClick={props.handleCLickSecciones}
-            > 
-                <strong>Seccion:</strong> A  -
-                <strong> Alumnos:</strong> 30  
-                <strong> Profesor:</strong> Nombre Profesor
-            </button>
+            <Card title="Seccion A" subtitle="Profesores:" text="Ejemplo perez">
+                <button 
+                    className="Button Green"
+                    onClick={props.handleCLickSecciones}
+                > 
+                </button>
+            </Card>
+           
             <button 
                 className="Button Blue"
                 onClick={props.handleCLickSecciones}

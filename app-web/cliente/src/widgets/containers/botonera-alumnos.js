@@ -3,8 +3,8 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Ca
 import classnames from 'classnames';
 
 import BotoneraLayout from '../components/botonera-layout'
-import PanelControlSecciones from '../components/panel-control-secciones'
-class BotoneraSeccion extends Component {
+import PanelControlAlumnos from '../components/panel-control-alumnos'
+class BotoneraALumnos extends Component {
   constructor(props) {
     super(props);
 
@@ -50,7 +50,7 @@ class BotoneraSeccion extends Component {
 
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
-               <PanelControlSecciones />
+               <PanelControlAlumnos />
           </TabPane>
 
           <TabPane tabId="2">
@@ -77,5 +77,4 @@ class BotoneraSeccion extends Component {
     );
   }
 }
-
-export default BotoneraSeccion;
+export default BotoneraALumnos

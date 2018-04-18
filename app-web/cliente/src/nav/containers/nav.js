@@ -7,6 +7,8 @@ import NavLayout from '../components/nav-layout'
 import NavOption from '../components/nav-option'
 import Menu from '../components/menu'
 import  * as actions from '../../actions/pages-seccion' 
+import ProfilePhoto from '../components/profile-photo'
+import Redes from '../components/redes'
 class Nav extends Component {
     handleClickSecciones = event =>{
         this.props.actions.closeSeccion()
@@ -18,8 +20,11 @@ class Nav extends Component {
     render(){
         return(
             <NavLayout>
+                
                 <Menu handleClik={this.handleClikMenu}/>
+                <ProfilePhoto/>
                 <NavOption handleClikSecciones={this.handleClickSecciones}/>
+                <Redes/>
             </NavLayout>
         )
     }

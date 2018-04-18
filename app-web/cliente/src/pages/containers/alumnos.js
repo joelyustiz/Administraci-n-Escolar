@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import AlumnosLayout from '../components/alumnos-layout'
-import BotoneraSeccion from '../../widgets/containers/botonera-seccion'
+import BotoneraAlumnos from '../../widgets/containers/botonera-alumnos'
 import Table from '../../widgets/components/table'
 class Alumnos extends Component {
     state = {
@@ -16,7 +16,7 @@ class Alumnos extends Component {
     render(){
         return(
             <AlumnosLayout>
-               <BotoneraSeccion /> 
+               <BotoneraAlumnos /> 
                 <Table/>
             </AlumnosLayout>
         )

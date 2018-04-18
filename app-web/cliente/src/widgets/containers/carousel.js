@@ -9,19 +9,19 @@ import {
 
 const items = [
   {
-    src: '/images/Fondo.jpg',
-    altText: 'Slide 1',
-    caption: 'Slide 1'
+    src: '/images/portada1.jpg',
+    altText: 'C.E.I.B Maria Violante Herrera',
+    caption: 'C.E.I.B Maria Violante Herrera'
   },
   {
-    src: '/images/Fondo2.jpg',
-    altText: 'Slide 2',
-    caption: 'Slide 2'
+    src: '/images/portada2.jpg',
+    altText: 'C.E.I.B Maria Violante Herrera',
+    caption: 'C.E.I.B Maria Violante Herrera'
   },
   {
-    src: '/images/Fondo2.png',
-    altText: 'Slide 3',
-    caption: 'Slide 3'
+    src: '/images/portada3.jpg',
+    altText: '',
+    caption: 'C.E.I.B Maria Violante Herreras'
   }
 ];
 

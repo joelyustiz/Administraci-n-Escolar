@@ -41,6 +41,7 @@ function TableSkeleton(props) {
                     <td>Lorem, ipsum.</td>
                     <td>Lorem, ipsum.</td>
                     <td>Lorem, ipsum.</td>
+                    <td><button></button></td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
