@@ -1,4 +1,11 @@
-import { OPEN_SECCION, CLOSE_SECCION, SHOW_BOTONERA_ELEGIR_SECCION, HIDE_BOTONERA_ELEGIR_SECCION } from '../actions-type/index'
+import { 
+    OPEN_SECCION,
+    CLOSE_SECCION, 
+    SHOW_BOTONERA_ELEGIR_SECCION, 
+    HIDE_BOTONERA_ELEGIR_SECCION,
+    SHOW_SECCION_ELEGITY,
+    HIDE_SECCION_ELEGITY,
+} from '../actions-type/index'
 
 export function openSeccion(seccionId) {
     return {
@@ -26,3 +33,15 @@ export function hideBotonera() {
         type:HIDE_BOTONERA_ELEGIR_SECCION
     }
 }
+export function hideBotoneraSeccion(){
+    return {
+        type: HIDE_SECCION_ELEGITY
+    }
+}
+
+export function showBotoneraSeccion(){
+    return {
+        type: SHOW_SECCION_ELEGITY
+    }
+}
+

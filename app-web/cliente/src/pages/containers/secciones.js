@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
-import SeccionesLayout from '../components/secciones-layout'
 import { connect } from 'react-redux'
-import * as seccionActions from '../../actions/pages-seccion'
-import * as actions from '../../actions/index'
 import { List as list } from 'immutable'
 import { bindActionCreators }from 'redux'
 
+import SeccionesLayout from '../components/secciones-layout'
+import * as seccionActions from '../../actions/pages-seccion'
+import * as actions from '../../actions/index'
 import Botonera from '../../widgets/containers/botonera-seccion'
 import ElegirSecciones from '../components/elegir-secciones'
 import Table from '../../widgets/components/table'
+import TableSeccion from '../../table/components/table-secciones'
+
 class Secciones extends Component {
     constructor(props) {
         super(props);
@@ -28,18 +30,19 @@ class Secciones extends Component {
       }
 
       handleCLickSecciones = event => {
-        !this.props.visibilitySeccion ? this.props.seccionActions.openSeccion() : this.props.seccionActions.closeSeccion()
+        
+        !this.props.visibilitySeccion ? this.props.seccionActions.openSeccion(2) : this.props.seccionActions.closeSeccion()
       }
 
     render(){
         return(
             <SeccionesLayout>
-                <Botonera handleCLickSecciones={this.handleCLickSecciones} />
+                <Botonera />
                 {!this.props.visibilitySeccion &&
                      <ElegirSecciones handleCLickSecciones={this.handleCLickSecciones} />
                 }
                 {this.props.visibilitySeccion &&
-                    <Table></Table>
+                    <TableSeccion alumnos={this.props.alumnos}></TableSeccion>
                 }
                 
             </SeccionesLayout>

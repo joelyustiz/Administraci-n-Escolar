@@ -22,3 +22,8 @@ background: #f3f3f6;
 .button:hover {
     background: #065c96;
 }
+
+.buttonDrop{
+	margin: auto 0;
+	
+}

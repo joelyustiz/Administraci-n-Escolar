@@ -1,0 +1,17 @@
+.TableSkeleton button{
+    height: inherit;
+    border: none;
+    background: transparent;
+    outline: 0;
+    width: inherit;
+    box-sizing: none;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 0;
+    
+}
+.TableSkeleton td:first-child button {
+    margin:  auto 2px;
+    padding: 0 0;
+
+}

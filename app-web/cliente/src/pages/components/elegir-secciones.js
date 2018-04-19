@@ -6,46 +6,46 @@ import Card from '../../widgets/components/card'
 export default function ElegirSecciones(props) {
     return (
         <div className="ElegirSecciones">
-            <Card title="Seccion A" subtitle="Profesores:" text="Ejemplo perez">
+            <Card src="/images/seccion1.jpg" title="Seccion A" subtitle="Profesores:" text="Ejemplo perez">
                 <button 
                     className="Button Green"
                     onClick={props.handleCLickSecciones}
                 > 
+                    Abrir
                 </button>
             </Card>
-           
-            <button 
-                className="Button Blue"
-                onClick={props.handleCLickSecciones}
-            > 
-                <strong>Seccion:</strong> B  -
-                <strong> Alumnos:</strong> 30  
-                <strong> Profesor:</strong> Nombre Profesor
-            </button>
-            <button 
-                className="Button Violet"
-                onClick={props.handleCLickSecciones}
-            > 
-                <strong>Seccion:</strong> C  -
-                <strong> Alumnos:</strong> 30  
-                <strong> Profesor:</strong> Nombre Profesor
-            </button>
-            <button 
-                className="Button Orange"
-                onClick={props.handleCLickSecciones}
-            > 
-                <strong>Seccion:</strong> D  -
-                <strong> Alumnos:</strong> 30  
-                <strong> Profesor:</strong> Nombre Profesor
-            </button>
-            <button 
-                className="Button Red"
-                onClick={props.handleCLickSecciones}
-            > 
-                <strong>Seccion:</strong> E  -
-                <strong> Alumnos:</strong> 30  
-                <strong> Profesor:</strong> Nombre Profesor
-            </button> 
+            <Card src="/images/seccion2.jpg" title="Seccion A" subtitle="Profesores:" text="Ejemplo perez">
+                <button 
+                    className="Button Green"
+                    onClick={props.handleCLickSecciones}
+                >
+                    Abrir 
+                </button>
+            </Card>
+            <Card src="/images/seccion3.jpg" title="Seccion A" subtitle="Profesores:" text="Ejemplo perez">
+                <button 
+                    className="Button Green"
+                    onClick={props.handleCLickSecciones}
+                > 
+                Abrir
+                </button>
+            </Card>
+            <Card src="/images/seccion4.jpg" title="Seccion A" subtitle="Profesores:" text="Ejemplo perez">
+                <button 
+                    className="Button Green"
+                    onClick={props.handleCLickSecciones}
+                > 
+                Abrir
+                </button>
+            </Card>
+            <Card src="/images/seccion5.jpg" title="Seccion A" subtitle="Profesores:" text="Ejemplo perez">
+                <button 
+                    className="Button Green"
+                    onClick={props.handleCLickSecciones}
+                > 
+                Abrir
+                </button>
+            </Card>   
         </div>
     )
 }

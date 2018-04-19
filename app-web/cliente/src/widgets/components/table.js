@@ -9,14 +9,13 @@ function TableSkeleton(props) {
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Cedula Escolar</th>
-                    <th>Last Name</th>
                     <th>Nombres</th>
                     <th>Apellidos</th>
                     <th>Sexo</th>
                     <th>Edad</th>
                     <th>Fecha De nacimiento</th>
                     <th>Lugar de nacimiento</th>
+                    <th>Cargo</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -29,23 +28,9 @@ function TableSkeleton(props) {
                     <td>Lorem, ipsum.</td>
                     <td>Lorem, ipsum.</td>
                     <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
                 </tr>
                 <tr>
-                    <th scope="row">2</th>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td><button></button></td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Lorem, ipsum.</td>
+                    <th scope="row">1</th>
                     <td>Lorem, ipsum.</td>
                     <td>Lorem, ipsum.</td>
                     <td>Lorem, ipsum.</td>
@@ -55,19 +40,7 @@ function TableSkeleton(props) {
                     <td>Lorem, ipsum.</td>
                 </tr>
                 <tr>
-                    <th scope="row">4</th>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Lorem, ipsum.</td>
+                    <th scope="row">1</th>
                     <td>Lorem, ipsum.</td>
                     <td>Lorem, ipsum.</td>
                     <td>Lorem, ipsum.</td>
@@ -77,19 +50,7 @@ function TableSkeleton(props) {
                     <td>Lorem, ipsum.</td>
                 </tr>
                 <tr>
-                    <th scope="row">6</th>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                </tr>
-                <tr>
-                    <th scope="row">7</th>
-                    <td>Lorem, ipsum.</td>
+                    <th scope="row">1</th>
                     <td>Lorem, ipsum.</td>
                     <td>Lorem, ipsum.</td>
                     <td>Lorem, ipsum.</td>
@@ -99,19 +60,7 @@ function TableSkeleton(props) {
                     <td>Lorem, ipsum.</td>
                 </tr>
                 <tr>
-                    <th scope="row">8</th>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                    <td>Lorem, ipsum.</td>
-                </tr>
-                <tr>
-                    <th scope="row">9</th>
-                    <td>Lorem, ipsum.</td>
+                    <th scope="row">1</th>
                     <td>Lorem, ipsum.</td>
                     <td>Lorem, ipsum.</td>
                     <td>Lorem, ipsum.</td>
@@ -121,8 +70,7 @@ function TableSkeleton(props) {
                     <td>Lorem, ipsum.</td>
                 </tr>
                 <tr>
-                    <th scope="row">10</th>
-                    <td>Lorem, ipsum.</td>
+                    <th scope="row">1</th>
                     <td>Lorem, ipsum.</td>
                     <td>Lorem, ipsum.</td>
                     <td>Lorem, ipsum.</td>
@@ -131,6 +79,48 @@ function TableSkeleton(props) {
                     <td>Lorem, ipsum.</td>
                     <td>Lorem, ipsum.</td>
                 </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                    <td>Lorem, ipsum.</td>
+                </tr>
+               
+                
                 </tbody>
             </Table>
         </div>

@@ -1,6 +1,6 @@
 .NavLayout{
     background: #171c30; 
-     
+    max-height: 100%;
 }
 .NavLayout  button{
         height: inherit;

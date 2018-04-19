@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
+import { connect } from 'react-redux'
 
+
+import * as seccionActions from '../../actions/pages-seccion'
+import SeccionButton from '../components/seccion-button'
 import BotoneraLayout from '../components/botonera-layout'
 import PanelControlSecciones from '../components/panel-control-secciones'
 class BotoneraSeccion extends Component {
@@ -50,7 +54,10 @@ class BotoneraSeccion extends Component {
 
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
-               <PanelControlSecciones />
+          {
+            this.props.seccionElegida ?<SeccionButton></SeccionButton>: <PanelControlSecciones />
+          }
+               
           </TabPane>
 
           <TabPane tabId="2">
@@ -78,4 +85,10 @@ class BotoneraSeccion extends Component {
   }
 }
 
-export default BotoneraSeccion;
+function mapStateToProps(state, props) {
+  const seccionElegida = state.get('pageSecciones').get('seccionElegida')
+  return {
+    seccionElegida
+  }
+}
+export default connect(mapStateToProps)(BotoneraSeccion);
