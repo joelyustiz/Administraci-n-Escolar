@@ -62,18 +62,17 @@ class BotoneraSeccion extends Component {
 
           <TabPane tabId="2">
             <Row>
-              <Col sm="6">
+              <Col sm="2">
                 <Card body>
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
+                  <h4>Matricula:</h4>
+                  <h5><strong>25</strong></h5>
                 </Card>
               </Col>
-              <Col sm="6">
+              <Col sm="4">
                 <Card body>
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                  <Button>Go somewhere</Button>
+                  <h4>Docentes</h4>
+                  <h5>Maria Dulces</h5>
+                  <h5>Carmen perez</h5>
                 </Card>
               </Col>
             </Row>

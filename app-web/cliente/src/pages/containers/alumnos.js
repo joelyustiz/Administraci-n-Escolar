@@ -20,9 +20,9 @@ class Alumnos extends Component {
     render(){
         return(
             <AlumnosLayout>
-               <BotoneraAlumnos /> 
-               <TableAlumnos alumnos={this.props.alumnos}></TableAlumnos>
-               {/* <FormALumnos/> */}
+               {/* <BotoneraAlumnos /> 
+               <TableAlumnos alumnos={this.props.alumnos}></TableAlumnos> */}
+               <FormALumnos/>
             </AlumnosLayout>
         )
     }

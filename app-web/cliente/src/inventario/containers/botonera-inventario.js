@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
+import { connect } from 'react-redux'
 
+
+import * as seccionActions from '../../actions/pages-seccion'
+import PanelControlInventario from '../components/panel-control-inventario'
 import BotoneraLayout from '../components/botonera-layout'
-import PanelControlAlumnos from '../components/panel-control-alumnos'
-class BotoneraALumnos extends Component {
+
+class BotoneraInventario extends Component {
   constructor(props) {
     super(props);
 
@@ -50,28 +54,21 @@ class BotoneraALumnos extends Component {
 
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
-               <PanelControlAlumnos />
+              <PanelControlInventario/>
+               
           </TabPane>
 
-          <TabPane tabId="2">
-            <Row>
-              <Col sm="2">
-                <Card body>
-                 <h5>Cantidad de alumnos</h5>
-                 <h6>110</h6>
-                </Card>
-              </Col>
-              <Col sm="6">
-                <Card body>
-               
-                </Card>
-              </Col>
-            </Row>
-          </TabPane>
         </TabContent>
       </BotoneraLayout>
        
     );
   }
 }
-export default BotoneraALumnos
+
+function mapStateToProps(state, props) {
+ 
+  return {
+    
+  }
+}
+export default connect(mapStateToProps)(BotoneraInventario);

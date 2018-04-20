@@ -12,6 +12,7 @@ function NavOption(props) {
             </Link>
             <Link to="/alumnos">Alumnos</Link>
             <Link to="/personal">Personal</Link>
+            <Link to="/inventario">Inventario</Link>
         </div>
     )
 }

@@ -12,7 +12,12 @@ class Home extends Component {
                     <Carousel></Carousel> 
                 </div>
                 <div className="CardArticle">
-                 <CardArticle></CardArticle>
+                 <CardArticle src="/images/logo.jpg"></CardArticle>
+                 <CardArticle src="/images/logo.jpg"></CardArticle>
+                 <CardArticle src="/images/logo.jpg"></CardArticle>
+                 <CardArticle src="/images/logo.jpg"></CardArticle>
+                 <CardArticle src="/images/logo.jpg"></CardArticle>
+                 <CardArticle src="/images/logo.jpg"></CardArticle>
                 </div>
                
             </HomeLayout>

@@ -1,0 +1,4 @@
+.BotoneraInventario{
+    display: grid;
+    grid-template-columns: auto auto 300px;
+}

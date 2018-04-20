@@ -8,3 +8,4 @@ module.exports = {
         dialect: 'postgres',
         logging: s => debug(s),
 }
+

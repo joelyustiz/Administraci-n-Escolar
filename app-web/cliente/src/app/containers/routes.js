@@ -7,6 +7,7 @@ import Home from '../../pages/containers/home'
 import Alumnos from '../../pages/containers/alumnos'
 import Personal from '../../pages/containers/personal'
 import Secciones from '../../pages/containers/secciones'
+import Inventario from '../../inventario/containers/inventario'
 class Routes extends Component {
     render(){
         return(
@@ -18,6 +19,7 @@ class Routes extends Component {
                 <Route exact path="/personal" component={Personal} />
                 {/* <Route exact path="/library" component={Library} /> */}
                 {/* <Route exact path="/library/:id" component={Library} /> */}
+                <Route exact path="/inventario" component={Inventario} />
                 <Route exact path="/" component={Home} />
                 {/* <Route component={Page404} /> */}
             </Switch>
