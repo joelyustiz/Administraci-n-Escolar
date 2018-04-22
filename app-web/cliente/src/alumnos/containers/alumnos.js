@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import AlumnosLayout from '../components/alumnos-layout'
-import BotoneraAlumnos from '../../widgets/containers/botonera-alumnos'
+import BotoneraAlumnos from './botonera-alumnos'
 import Table from '../../widgets/components/table'
 import TableAlumnos from '../../table/components/table-alumnos'
 import FormALumnos from '../../form/components/form-alumnos'

@@ -4,9 +4,9 @@ import { Route, Switch } from 'react-router-dom';
 //components
 import App from './app'
 import Home from '../../pages/containers/home'
-import Alumnos from '../../pages/containers/alumnos'
-import Personal from '../../pages/containers/personal'
-import Secciones from '../../pages/containers/secciones'
+import Alumnos from '../../alumnos/containers/alumnos'
+import Personal from '../../personal/containers/personal'
+import Secciones from '../../secciones/containers/secciones'
 import Inventario from '../../inventario/containers/inventario'
 class Routes extends Component {
     render(){

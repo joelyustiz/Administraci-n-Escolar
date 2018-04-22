@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { List as list } from 'immutable'
 import { bindActionCreators }from 'redux'
 
-import InventarioLayout from '../../pages/components/secciones-layout'
+import InventarioLayout from '../components/inventario-layout'
 
 import BotoneraInventario from './botonera-inventario'
 import TableEjemplo from '../../widgets/components/table'

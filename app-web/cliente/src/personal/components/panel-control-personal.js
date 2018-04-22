@@ -1,7 +1,7 @@
 import React from 'react'
 import './panel-control-alumnos.css'
 import Search from '../containers/search'
-import PanelControlSecciones from './panel-control-secciones';
+// import PanelControlSecciones from './panel-control-secciones';
 import ButtonDropdownPersonal from '../containers/button-personal-dropdown'
 function PanelControlAlumnos(props) {
     return (
