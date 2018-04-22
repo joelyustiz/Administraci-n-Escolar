@@ -2,11 +2,12 @@ import React from 'react';
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 import './form.css'
-export default class Example extends React.Component {
+
+class FormAlumnos extends React.Component {
   render() {
     return (
       <div className="FormLayout">
-          <Form>
+          <Form id="alumnosForm">
           <FormGroup row>
               <Label for="estado" sm={2}>Estado</Label>
               <Col sm={10}>
@@ -92,12 +93,13 @@ export default class Example extends React.Component {
               </Col>
             </FormGroup>
 
-            <Button>Guardar</Button>
+            <Button onClick={this.props.handleSubmitForm}>Guardar</Button>
             <div></div>
-            <Button>Cancelar</Button>
+            <Button onClick={this.props.handleSubmitForm}>Cancelar</Button>
           </Form>
       </div>
       
     );
   }
 }
+export default  FormAlumnos

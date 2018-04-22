@@ -53,7 +53,7 @@ class Secciones extends Component {
 
 
 function mapStateToProps(state, props) {
-  const alumnos = state.get('alumnos').get('alumno')
+  const alumnos = state.get('datos').get('alumno')
 
   let searchResults = list()//los array son listas y los objetos son mapas
   const secciones = state.get('seccion')

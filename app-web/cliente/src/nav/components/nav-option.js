@@ -8,9 +8,11 @@ function NavOption(props) {
         <div className="NavOption">
             <Link to="/">Inicio</Link>
             <Link to="/secciones">
-                <div onClick={props.handleClikSecciones}>Secciones</div>
+                <div onClick={props.handleClickSecciones}>Secciones</div>
             </Link>
-            <Link to="/alumnos">Alumnos</Link>
+            <Link to="/alumnos">
+                <div onClick={props.handleClickAlumnos}>Alumnos</div>
+            </Link>
             <Link to="/personal">Personal</Link>
             <Link to="/inventario">Inventario</Link>
         </div>

@@ -6,7 +6,7 @@ import ButtonDropdownAlumnos from '../containers/button-dropDown-alumnos'
 function PanelControlAlumnos(props) {
     return (
         <div className="BotoneraAlumnos">
-            <button className="button blue" onClick={props.handleClick} >Agregar Alumno</button>
+            <button className="button blue" onClick={props.handleClickAgregarAlumno} >Agregar Alumno</button>
             <ButtonDropdownAlumnos></ButtonDropdownAlumnos>
             <Search/> 
         </div>

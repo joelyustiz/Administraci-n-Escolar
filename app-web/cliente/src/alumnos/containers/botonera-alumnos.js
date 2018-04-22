@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
+import { connect } from 'react-redux'
+import { bindActionCreators }from 'redux'
 
 import BotoneraLayout from '../components/botonera-layout'
 import PanelControlAlumnos from '../components/panel-control-alumnos'
+import * as alumnoActions from '../../actions/pages-alumno'
+
 class BotoneraALumnos extends Component {
   constructor(props) {
     super(props);
@@ -22,8 +26,8 @@ class BotoneraALumnos extends Component {
     }
   }
 
-  handleClick = event =>{
-    console.log('BOTON')
+  handleClickAgregarALumno = event =>{
+    this.props.alumnosActions.openAgregarAlumno()
   }
   render() {
     return (
@@ -50,7 +54,7 @@ class BotoneraALumnos extends Component {
 
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
-               <PanelControlAlumnos />
+               <PanelControlAlumnos handleClickAgregarAlumno={this.handleClickAgregarALumno} />
           </TabPane>
 
           <TabPane tabId="2">
@@ -74,4 +78,10 @@ class BotoneraALumnos extends Component {
     );
   }
 }
-export default BotoneraALumnos
+
+function mapDispatchToProps(dispatch) {
+    return {
+        alumnosActions: bindActionCreators(alumnoActions, dispatch)
+    }
+}
+export default connect(null, mapDispatchToProps)(BotoneraALumnos)
