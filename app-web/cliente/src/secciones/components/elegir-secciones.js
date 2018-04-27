@@ -8,6 +8,7 @@ export default function ElegirSecciones(props) {
         <div className="ElegirSecciones">
             <Card src="/images/seccion1.jpg" title="Seccion A" subtitle="Profesores:" text="Ejemplo perez">
                 <button 
+                    name="1"
                     className="Button Green"
                     onClick={props.handleCLickSecciones}
                 > 
@@ -16,6 +17,7 @@ export default function ElegirSecciones(props) {
             </Card>
             <Card src="/images/seccion2.jpg" title="Seccion B" subtitle="Profesores:" text="Ejemplo perez">
                 <button 
+                    name="2"
                     className="Button Green"
                     onClick={props.handleCLickSecciones}
                 >

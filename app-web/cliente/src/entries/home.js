@@ -13,6 +13,12 @@ import AppRoutes from '../app/containers/routes'
 import request from 'axios'
 import a from 'awaiting'
 
+import { SocketProvider } from 'socket.io-react';
+import io from 'socket.io-client';
+
+const socket = io.connect(process.env.SOCKET_URL);
+socket.on('message', msg => console.log(msg));
+
 const app = document.getElementById('home-container')
 
 
@@ -28,8 +34,10 @@ const store = createStore(
 
 render( 
     <Provider store={store}>
-         <Router>
-             <AppRoutes />
-         </Router>
+        <SocketProvider socket={socket}>
+            <Router>
+                <AppRoutes />
+            </Router>
+         </SocketProvider>
     </Provider>
      , app);

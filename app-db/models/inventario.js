@@ -3,17 +3,17 @@
 const Sequelize = require('sequelize')
 const setupDatabase = require('../lib/db')
 
-module.exports = function setupSeccionModel (config) {
+module.exports = function setupPersonalModel (config) {
   const sequelize = setupDatabase(config)
 
-  return sequelize.define('seccions', {
-    nombre: {
+  return sequelize.define('inventario', {
+    producto: {
       type: Sequelize.STRING,
       allowNull: false
     },
-    valor: {
-      type: Sequelize.STRING,
-      allowNull: false
-    }
+    cantidad: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
   })
 }

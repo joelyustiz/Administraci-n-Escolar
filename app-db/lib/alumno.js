@@ -1,18 +1,27 @@
 'use strict'
-
+const debug = require('debug')('platziverse:db:alumno')
 module.exports = function setupAlumno (SeccionModel, AlumnoModel) {
-  async function createOrUpdate (uuid, alumno) {
+  async function createOrUpdate (id, alumno) {
+    
+    debug(`ID QUE LLEGA ${alumno.id}`)
+    if (!alumno.id === "") {
+      debug('Ingrso a null')
+      const consulta = await AlumnoModel.findOne({where:{id:alumno.id}})
+      if (seccion && consulta) {
+  
+        const updated = await AlumnoModel.update(alumno, {where:{id:alumno.id}} )
+        return updated ? AlumnoModel.findOne({where:{id:alumno.id}}) : Alumno
+      }
+    }
+
+
+   debug('Ingreso a crear')
     const seccion = await SeccionModel.findOne( {
       where: {
-        uuid
+        id
       }
     })
-   const consulta = await AlumnoModel.findOne({where:{uuid:alumno.uuid}})
-    if (seccion && consulta) {
-
-      const updated = await AlumnoModel.update(alumno, {where:{uuid:alumno.uuid}} )
-      return updated ? AlumnoModel.findOne({where:{uuid:alumno.uuid}}) : Alumno
-    }
+   delete alumno.id
     Object.assign(alumno, { seccionId: seccion.id })
     const result = await AlumnoModel.create(alumno)
     return result.toJSON()

@@ -3,10 +3,10 @@ module.exports = function setupSeccion (SeccionModel) {
   async function createOrUpdate (seccion) {
     const cond = {
       where: {
-        uuid: seccion.uuid
+        id: seccion.id
       }
     }
-    console.log(seccion.uuid)
+    // console.log(seccion.id)
     const existingSeccion = await SeccionModel.findOne(cond)
     console.log(existingSeccion)
     if (existingSeccion) {

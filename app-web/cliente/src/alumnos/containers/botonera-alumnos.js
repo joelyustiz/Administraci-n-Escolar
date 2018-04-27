@@ -6,7 +6,7 @@ import { bindActionCreators }from 'redux'
 
 import BotoneraLayout from '../components/botonera-layout'
 import PanelControlAlumnos from '../components/panel-control-alumnos'
-import * as alumnoActions from '../../actions/pages-alumno'
+import * as actions from '../../actions'
 
 class BotoneraALumnos extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class BotoneraALumnos extends Component {
   }
 
   handleClickAgregarALumno = event =>{
-    this.props.alumnosActions.openAgregarAlumno()
+    this.props.actions.openAgregarAlumno()
   }
   render() {
     return (
@@ -81,7 +81,7 @@ class BotoneraALumnos extends Component {
 
 function mapDispatchToProps(dispatch) {
     return {
-        alumnosActions: bindActionCreators(alumnoActions, dispatch)
+        actions: bindActionCreators(actions, dispatch)
     }
 }
 export default connect(null, mapDispatchToProps)(BotoneraALumnos)

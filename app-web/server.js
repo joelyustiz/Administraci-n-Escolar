@@ -42,22 +42,28 @@ const api = asyncify(express.Router())
 let services 
 let estado = {}
 
+
+async function estadoInicial(props) {
+  if (!services) {
+    debug('Connecting to database')
+    try {
+      services = await db(config.db)
+      estado.alumno = await services.Alumno.findAll()
+      estado.seccion = await services.Seccion.findAll()
+    } catch (e) {
+      return next(e)
+    }
+  }
+  estado.alumno = await services.Alumno.findAll()
+  estado.seccion = await services.Seccion.findAll()
+  return estado
+}
+
 app.get('/estado-inicial', async (req, res, next) => {
     
     console.log(`SERVICIOSSSS ${services}`)
-    if (!services) {
-      debug('Connecting to database')
-      try {
-        services = await db(config.db)
-        estado.alumno = await services.Alumno.findAll()
-        estado.seccion = await services.Seccion.findAll()
-      } catch (e) {
-        return next(e)
-      }
-    }
-    estado.alumno = await services.Alumno.findAll()
-    estado.seccion = await services.Seccion.findAll()
-    res.json(estado)
+    let respusta = await estadoInicial()
+    res.json(respusta)
   })
 //api
 app.use('/api/alumno', require('./api/alumno'))
@@ -70,11 +76,19 @@ app.use(express.static(path.join(__dirname, 'data')))
 app.get("*", function(req, res) {
   res.sendFile(__dirname + '/index.html');
 });
-// Socket.io / WebSockets
+
+// Socket.io / WebSockets -------------------------------
 io.on('connect', socket => {
   debug(`Connected ${socket.id}`)
+  
+  socket.on('agregarAlumno', async function (data) {
+    console.log(data.id);
 
-  pipe(agent, socket)
+   await services.Alumno.createOrUpdate(1, data)
+
+    estado = await estadoInicial()
+    socket.emit('datos-inicial', estado)
+  })
 })
 
 // Express Error Handler

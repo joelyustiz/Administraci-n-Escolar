@@ -7,6 +7,8 @@ export const SEARCH_ASYNC_ENTITIES = 'SEARCH_ASYNC_ENTITIES'
 export const IS_LOADING = 'IS_LOADING'
 //estado inicial
 export const ADD_TODO = 'ADD_TODO'
+export const ACT_TODO = 'ACT_TODO'
+export const CLR_ESTADO = 'CLR_ESTADO'
 //seccion
 export const OPEN_SECCION = 'OPEN_SECCION'
 export const CLOSE_SECCION = 'CLOSE_SECCION'
@@ -17,3 +19,4 @@ export const HIDE_SECCION_ELEGITY = 'HIDE_SECCION_ELEGITY'
 //alumnos
 export const OPEN_FORM_ALUMNO = 'OPEN_FORM_ALUMNO'
 export const CLOSE_ALL_ALUMNO = 'CLOSE_FORM_ALUMNO'
+export const AGREGAR_ALUMNO_FORM = 'AGREGAR_ALUMNO_FORM'

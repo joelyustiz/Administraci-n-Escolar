@@ -7,49 +7,49 @@ module.exports = function setupAlumnoModel (config) {
   const sequelize = setupDatabase(config)
 
   return sequelize.define('alumnos', {
-    uuid: {
+    estado: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: true
     },
     cedula_escolar: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: true
     },
     apellidos: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: true
     },
     nombres: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: true
     },
     sexo: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: true
     },
     edad: {
       type: Sequelize.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     fecha_nacimiento: {
       type: Sequelize.DATE,
-      allowNull: false
+      allowNull: true
     },
     lugar_nacimiento: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: true
     },
     nombre_representante: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: true
     },
     cedula_representante: {
       type: Sequelize.STRING,
-      allowNull: false
+      allowNull: true
     },
     direction: {
       type: Sequelize.TEXT,
-      allowNull: false
+      allowNull: true
     },
     telefono: {
       type: Sequelize.STRING,

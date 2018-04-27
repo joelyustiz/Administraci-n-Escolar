@@ -5,6 +5,7 @@ import './table.css'
 import Pincel2Icon from '../../icons/components/pencil2'
 import './icon-button.css'
 import CrossIcon from '../../icons/components/cross'
+
 function TableSkeletonAlumno(props) {
     let contador
     return(
@@ -33,11 +34,9 @@ function TableSkeletonAlumno(props) {
                                    
                     props.alumnos.map((alumnoId) =>{
                         let contador 
-                        return <tr className="TableSkeleton"  key={alumnoId.id}>
-                                    <td>
-                                        <button><Pincel2Icon size={30} color="black"/> </button>
-                                        <button><CrossIcon size={30}color="black"/> </button>
-                                        
+                        return <tr className="TableSkeleton"  key={alumnoId.id} >
+                                    <td name="hola"onClick={props.handleClickModificar.bind(alumnoId.id)} >
+                                        {alumnoId.id}
                                     </td>
                                     <td>{alumnoId.cedula_escolar}</td>
                                     <td>{alumnoId.apellidos}</td>

@@ -11,16 +11,16 @@ module.exports = function setupPersonalModel (config) {
       type: Sequelize.STRING,
       allowNull: false
     },
-    cedula_escolar: {
-      type: Sequelize.STRING,
-      allowNull: false
-    },
     apellidos: {
       type: Sequelize.STRING,
       allowNull: false
     },
     nombres: {
       type: Sequelize.STRING,
+      allowNull: false
+    },
+    cedula: {
+      type: Sequelize.INTEGER,
       allowNull: false
     },
     sexo: {
@@ -40,6 +40,10 @@ module.exports = function setupPersonalModel (config) {
       allowNull: false
     },
     telefono: {
+      type: Sequelize.INTEGER,
+      allowNull: true
+    },
+    cargo: {
       type: Sequelize.INTEGER,
       allowNull: true
     },

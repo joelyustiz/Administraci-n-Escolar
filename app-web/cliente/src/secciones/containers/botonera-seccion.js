@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { connect } from 'react-redux'
 
 
-import * as seccionActions from '../../actions/pages-seccion'
+import * as actions from '../../actions'
 import SeccionButton from '../components/seccion-button'
 import BotoneraLayout from '../components/botonera-layout'
 import PanelControlSecciones from '../components/panel-control-secciones'
@@ -38,24 +38,24 @@ class BotoneraSeccion extends Component {
               className={classnames({ active: this.state.activeTab === '1' })}
               onClick={() => { this.toggle('1'); }}
             >
-              Herramientas
+              Secciones
             </NavLink>
           </NavItem>
-          <NavItem>
+          {/* <NavItem>
             <NavLink
               className={classnames({ active: this.state.activeTab === '2' })}
               onClick={() => { this.toggle('2'); }}
             >
               Información
             </NavLink>
-          </NavItem>
+          </NavItem> */}
         </Nav>
 
 
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
           {
-            this.props.seccionElegida ?<SeccionButton></SeccionButton>: <PanelControlSecciones />
+            this.props.seccionElegida ?<SeccionButton></SeccionButton> : ""//: <PanelControlSecciones />
           }
                
           </TabPane>

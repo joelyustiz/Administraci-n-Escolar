@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { connect } from 'react-redux'
 
 
-import * as seccionActions from '../../actions/pages-seccion'
+import * as actions from '../../actions/index'
 import PanelControlInventario from '../components/panel-control-inventario'
 import BotoneraLayout from '../components/botonera-layout'
 

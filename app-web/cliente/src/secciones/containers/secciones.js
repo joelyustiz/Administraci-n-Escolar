@@ -4,7 +4,6 @@ import { List as list } from 'immutable'
 import { bindActionCreators }from 'redux'
 
 import SeccionesLayout from '../components/secciones-layout'
-import * as seccionActions from '../../actions/pages-seccion'
 import * as actions from '../../actions/index'
 import Botonera from './botonera-seccion'
 import ElegirSecciones from '../components/elegir-secciones'
@@ -31,7 +30,7 @@ class Secciones extends Component {
 
       handleCLickSecciones = event => {
         
-        !this.props.visibilitySeccion ? this.props.seccionActions.openSeccion(2) : this.props.seccionActions.closeSeccion()
+        !this.props.visibilitySeccion ? this.props.actions.openSeccion(event.target.name) : this.props.actions.closeSeccion()
       }
 
     render(){
@@ -72,7 +71,7 @@ function mapStateToProps(state, props) {
 function mapDispatchToProps(dispatch) {
   return {
       actions: bindActionCreators(actions, dispatch),
-      seccionActions: bindActionCreators(seccionActions, dispatch)
+      // seccionActions: bindActionCreators(seccionActions, dispatch)
   }
 }
 
